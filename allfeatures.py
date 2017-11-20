@@ -108,7 +108,6 @@ df = df.dropna()
 # Calculate industry 
 
 industries_dict = {sector: np.mean(df[df.Industry == sector].PE.values) for sector in df.Industry.unique()}
-df.head()
 
 volatility_pe_df = volatility_df.merge(df, how='inner', left_on=['symbol'], right_on=['Ticker'])
 
@@ -181,43 +180,50 @@ fifty_two_week_df['std_high_low'] = np.array(std_high_low)
 fifty_two_week_df['std_vol'] = np.array(std_vol)
 fifty_two_week_df['std_sector'] = np.array(std_sector)
 
-"""
-Now make features (52 week high/low + volatility + portfolio_sector + std_pe) and 
-perform Latent Factor Analysis
-"""
+def top_k_stocks(k):
+    """
+    ::param k number of stocks to be ranked
 
-X = []
-centroid = {}
-for x in fifty_two_week_df.iterrows():
-    point = np.array([
-        x[1]['std_high_low'], x[1]['std_vol'], x[1]['std_pe'], x[1]['std_sector']])
-    if x[1]['symbol'] in portfolio:
-        centroid[tuple(point)] = portfolio[x[1]['symbol']]
-    X.append(point)
-    
-center = [0,0,0,0]
-for pt in centroid:
-    for i in range(4):
-        center[i] += centroid[pt]*pt[i]
+    Now make features (52 week high/low + volatility + portfolio_sector + std_pe) and 
+    perform Latent Factor Analysis
+    """
+    X = []
+    centroid = {}
+    for x in fifty_two_week_df.iterrows():
+        point = np.array([
+            x[1]['std_high_low'], x[1]['std_vol'], x[1]['std_pe'], x[1]['std_sector']])
+        if x[1]['symbol'] in portfolio:
+            centroid[tuple(point)] = portfolio[x[1]['symbol']]
+        X.append(point)
         
-X = np.array(X)
-U, s, V = np.linalg.svd(X, full_matrices=True)
-shifted_center = []
-for i in range(4):
-    shifted_center.append(V[-1][i]*s[-1]+center[i])
-    
-dist = {}
-for i in range(len(X)):
-    c_dist = 0
-    for j in range(4):
-        c_dist += (X[i][j]-shifted_center[j])**2
-    dist[i] = c_dist
-dist = sorted(dist, key = lambda x: dist[x])
-rankings = []
-for i in range(NUM_RANKED):
-    rankings.append(fifty_two_week_df.iloc[dist[i]])
+    center = [0,0,0,0]
+    for pt in centroid:
+        for i in range(4):
+            center[i] += centroid[pt]*pt[i]
+            
+    X = np.array(X)
+    U, s, V = np.linalg.svd(X, full_matrices=True)
+    shifted_center = []
+    for i in range(4):
+        shifted_center.append(V[-1][i]*(s[-1]) + center[i])
+        
+    dist = {}
+    for i in range(len(X)):
+        c_dist = 0
+        for j in range(4):
+            c_dist += (X[i][j]-shifted_center[j])**2
+        dist[i] = c_dist
+    dist = sorted(dist, key = lambda x: dist[x])
+    rankings = []
+    for i in range(NUM_RANKED):
+        rankings.append(fifty_two_week_df.iloc[dist[i]])
+    rankings_data = pd.DataFrame(rankings)
 
-rankings_data = pd.DataFrame(rankings)
+    return rankings_data
+def final_ranking(stocks):
+    portfolio_weights = sorted(portfolio.values())
+            
+top_stocks = top_k_stocks(NUM_RANKED)
+print(top_stocks)
 
-print(rankings_data)
 
