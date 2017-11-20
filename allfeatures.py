@@ -4,7 +4,7 @@ AUTHOR: Pranav Parthasarathy
         Shubrakanti Ganguli
         Alexander Bondarenko
         Maksim Ivanov
-FUNCTION: Combine and standardize all features into one notebook, perform PCA on these features
+FUNCTION: Combine and standardize all features, perform PCA on these features
 """
 import pandas as pd
 import numpy as np
@@ -105,7 +105,8 @@ df = df.drop(df[df.EPS < 0].index)
 df["PE"] = round(df['Price']/df['EPS'], 2)
 df = df.dropna()
 
-# Calculate industry averages
+# Calculate industry 
+
 industries_dict = {sector: np.mean(df[df.Industry == sector].PE.values) for sector in df.Industry.unique()}
 df.head()
 
