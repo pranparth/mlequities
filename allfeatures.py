@@ -1,17 +1,13 @@
 """
 AUTHOR: Pranav Parthasarathy
         Vedaad Shakib
-        Shubrakanti Ganguli
+        Shubhrakanti Ganguly
         Alexander Bondarenko
         Maksim Ivanov
 FUNCTION: Combine and standardize all features, perform PCA on these features
 """
 import pandas as pd
 import numpy as np
-import urllib as u
-from bs4 import BeautifulSoup as bs
-import matplotlib.pyplot as plt
-import lxml
 
 NUM_RANKED = 10
 
@@ -121,7 +117,7 @@ def get_standarized_PE(ticker, pe= None, industry= None):
         avg = industries_dict[indus]
         return (PE - avg)/avg
     else:
-        assert industry in industries_sect.keyes(), "You're sector needs to be a GICS Sector"
+        assert industry in industries_dict.keyes(), "You're sector needs to be a GICS Sector"
         avg = industries_dict[industry]
         return (pe - avg)/avg
 
@@ -164,7 +160,7 @@ for x in fifty_two_week_df.iterrows():
 fifty_two_week_df['portfolio_sector'] = sector_feature
 
 """
-standardize unstandardized features
+standardize un-standardized features
 """
 vol_mean, vol_std = fifty_two_week_df['volatility'].mean(), fifty_two_week_df['volatility'].std()
 high_low_diff = [x/y for x,y in zip(fifty_two_week_df['high'], fifty_two_week_df['low'])]
@@ -220,6 +216,7 @@ def top_k_stocks(k):
     rankings_data = pd.DataFrame(rankings)
 
     return rankings_data
+
 def final_ranking(stocks):
     portfolio_weights = sorted(portfolio.values())
             
