@@ -8,12 +8,16 @@ FUNCTION: Combine and standardize all features, perform PCA on these features
 """
 import pandas as pd
 import numpy as np
+import math
 
 NUM_RANKED = 10
+RISK_FREE_RATE = 1.0033
 
 constituents = pd.read_csv("constituents.csv")
 fundamentals = pd.read_csv("fundamentals.csv")
 prices_split_adjusted = pd.read_csv("prices-split-adjusted.csv")
+prices_for_expected_return = pd.read_csv("prices-split-adjusted.csv", parse_dates=['date'], index_col='date')
+prices_for_expected_return = prices_for_expected_return['2016']
 securities = pd.read_csv("securities.csv")
 df_price = pd.read_csv("prices.csv")
 
@@ -217,10 +221,67 @@ def top_k_stocks(k):
 
     return rankings_data
 
+def returns(ticker):
+
+    assert ticker in prices_for_expected_return.symbol.values, "fuck you, I don't have data for this ticker"
+    df = prices_for_expected_return.loc[prices_for_expected_return['symbol'] == ticker]
+    x = 1
+    returns = []
+    while x<=12:
+        df1 = df["2016-"+str(x)]
+        closing_prices = df1.close.values
+        returns.append(closing_prices[-1]/closing_prices[0])
+        x += 1
+    return returns
+
+
+def sharpe(portfolio):
+
+    portfolio_expected_return = 0
+    std_returns =[]
+    weighted_std_returns =[]
+    excess_return_matrix = []
+
+    for ticker, weight in portfolio.items():
+
+        stock_returns = returns(ticker)
+
+        avg = np.average(stock_returns)
+        std = np.std(stock_returns)
+        std_returns.append(std)
+        weighted_std_returns.append(weight*std)
+        portfolio_expected_return += weight*avg
+        excess_return_matrix.append(stock_returns-avg)
+
+    excess_return_matrix = np.array(excess_return_matrix).transpose()
+    covariance_matrix = np.dot(excess_return_matrix.transpose(),excess_return_matrix)/excess_return_matrix.shape[0]
+    std_products = np.outer(std_returns,std_returns)
+    correlation_matrix = np.divide(covariance_matrix,std_products)
+
+    weighted_std_returns = np.array(weighted_std_returns)
+    a = np.dot(weighted_std_returns, correlation_matrix)
+    portfolio_std = math.sqrt(math.sqrt(np.dot(a,weighted_std_returns.transpose())))
+
+
+    return (portfolio_expected_return-RISK_FREE_RATE)/portfolio_std
+
 def final_ranking(stocks):
-    portfolio_weights = sorted(portfolio.values())
+    median_weight = sorted(portfolio.values())[len(portfolio.values())//2]
+    ranking = {}
+    for stock in stocks:
+        portfolio[stock] = median_weight
+        total_sum = sum(portfolio.values())
+        for ticker in portfolio:
+            portfolio[ticker] = portfolio[ticker]/total_sum
+        ranking[stock] = sharpe(portfolio)
+        del portfolio[stock]
+    return sorted(ranking.keys(), key = lambda x: -ranking[x])
+
+
+
             
-top_stocks = top_k_stocks(NUM_RANKED)
+top_stocks = final_ranking(list(top_k_stocks(NUM_RANKED).symbol.values))
+
 print(top_stocks)
 
 

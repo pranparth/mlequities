@@ -4,11 +4,11 @@ import math
 
 prices = pd.read_csv("prices-split-adjusted.csv", parse_dates=['date'], index_col='date')
 prices = prices['2016']
-RISK_FREE_RATE = 1.28
-
+RISK_FREE_RATE = 1.0033
 
 def returns(ticker):
 
+    assert ticker in prices.symbol.values, "fuck you, I don't have data for this ticker"
     df = prices.loc[prices['symbol'] == ticker]
     x = 1
     returns = []
@@ -50,7 +50,6 @@ def sharpe(portfolio):
 
     return (portfolio_expected_return-RISK_FREE_RATE)/portfolio_std
 
-print(sharpe({"AAPL":0.5,"FB":0.5}))
 
 
 

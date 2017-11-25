@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d578f58-9b52-4d60-a2f8-0bf11c12a3bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sharpe-ranker.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/all_features-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/all_features-checkpoint.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/52WeekRatio.ipynb" afterPath="$PROJECT_DIR$/52WeekRatio.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/all_features.ipynb" afterPath="$PROJECT_DIR$/all_features.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/allfeatures.py" afterPath="$PROJECT_DIR$/allfeatures.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/diversify.ipynb" afterPath="$PROJECT_DIR$/diversify.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sharpe-ranker.py" afterPath="$PROJECT_DIR$/sharpe-ranker.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,33 +13,33 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/MLEquities$allfeatures.coverage" NAME="allfeatures Coverage Results" MODIFIED="1511402691795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MLEquities$allfeatures.coverage" NAME="allfeatures Coverage Results" MODIFIED="1511583996336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MLEquities$MLEquities.coverage" NAME="MLEquities Coverage Results" MODIFIED="1511405658962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/MLEquities$sharpe_ranker.coverage" NAME="sharpe-ranker Coverage Results" MODIFIED="1511496502984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MLEquities$sharpe_ranker.coverage" NAME="sharpe-ranker Coverage Results" MODIFIED="1511583595556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="allfeatures.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="allfeatures.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/allfeatures.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="184">
+              <caret line="258" column="66" lean-forward="true" selection-start-line="258" selection-start-column="66" selection-end-line="258" selection-end-column="66" />
               <folding>
                 <element signature="e#217#236#0" expanded="true" />
-                <element signature="e#849#944#0" expanded="false" />
-                <element signature="e#980#1362#0" expanded="false" />
-                <element signature="e#2063#2357#0" expanded="false" />
-                <element signature="e#3650#4119#0" expanded="false" />
+                <element signature="e#1059#1154#0" expanded="false" />
+                <element signature="e#1190#1572#0" expanded="false" />
+                <element signature="e#2273#2567#0" expanded="false" />
+                <element signature="e#3860#4329#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sharpe-ranker.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sharpe-ranker.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sharpe-ranker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="23" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -77,8 +72,8 @@
       <list>
         <option value="$PROJECT_DIR$/diversify.ipynb" />
         <option value="$PROJECT_DIR$/52WeekRatio.ipynb" />
-        <option value="$PROJECT_DIR$/allfeatures.py" />
         <option value="$PROJECT_DIR$/sharpe-ranker.py" />
+        <option value="$PROJECT_DIR$/allfeatures.py" />
       </list>
     </option>
   </component>
@@ -138,7 +133,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.sharpe-ranker">
+  <component name="RunManager" selected="Python.allfeatures">
     <configuration name="MLEquities" type="Python.Ipnb" factoryName="Jupyter Notebook">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -199,8 +194,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.sharpe-ranker" />
-        <item index="1" class="java.lang.String" itemvalue="Python.allfeatures" />
+        <item index="0" class="java.lang.String" itemvalue="Python.allfeatures" />
+        <item index="1" class="java.lang.String" itemvalue="Python.sharpe-ranker" />
       </list>
     </recent_temporary>
   </component>
@@ -230,7 +225,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.217" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.217" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -262,10 +257,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#217#236#0" expanded="true" />
-            <element signature="e#849#944#0" expanded="false" />
-            <element signature="e#980#1362#0" expanded="false" />
-            <element signature="e#2063#2357#0" expanded="false" />
-            <element signature="e#3650#4119#0" expanded="false" />
+            <element signature="e#1059#1154#0" expanded="false" />
+            <element signature="e#1190#1572#0" expanded="false" />
+            <element signature="e#2273#2567#0" expanded="false" />
+            <element signature="e#3860#4329#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -291,20 +286,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/allfeatures.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="e#217#236#0" expanded="true" />
-            <element signature="e#849#944#0" expanded="false" />
-            <element signature="e#980#1362#0" expanded="false" />
-            <element signature="e#2063#2357#0" expanded="false" />
-            <element signature="e#3650#4119#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/shape_base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -322,10 +303,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sharpe-ranker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="23" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/_methods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="2888" column="0" lean-forward="false" selection-start-line="2888" selection-start-column="0" selection-end-line="2888" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/lib/function_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="3857" column="0" lean-forward="false" selection-start-line="3857" selection-start-column="0" selection-end-line="3857" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/allfeatures.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="258" column="66" lean-forward="true" selection-start-line="258" selection-start-column="66" selection-end-line="258" selection-end-column="66" />
+          <folding>
+            <element signature="e#217#236#0" expanded="true" />
+            <element signature="e#1059#1154#0" expanded="false" />
+            <element signature="e#1190#1572#0" expanded="false" />
+            <element signature="e#2273#2567#0" expanded="false" />
+            <element signature="e#3860#4329#0" expanded="false" />
           </folding>
         </state>
       </provider>
